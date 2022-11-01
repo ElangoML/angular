@@ -1,0 +1,23 @@
+
+        <mat-form-field>
+            <table>
+                <tr>
+                    <td>
+                        <mat-label>Products</mat-label>
+                    </td>
+                <td>
+                <mat-select placeholder="options" [(value)]="selectedproduct" >
+                <mat-option>Select Product</mat-option>
+                  <mat-option *ngFor="let product of products" [value]="product.id">
+                      {{product.productName}}  
+                  </mat-option>
+                </mat-select>
+            </td>
+            <td class="seperator"></td>
+            <td>
+                    <button  mat-button (click)="getVal()">Fetch Details</button>
+            </td>
+        </tr>
+        </table>
+        </mat-form-field>
+    

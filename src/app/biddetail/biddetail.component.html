@@ -1,0 +1,109 @@
+<ng-container *ngIf="buyers.length > 1">
+<br>
+<div class="header">
+  Product Details
+</div>
+
+<br>
+
+  <mat-card>
+    <tr class="row">
+      <td class="col-xs-6">
+        Product Name
+      </td>
+      <td></td>
+      <td class="col-xs-6">
+       <b> {{ product.productName }}</b>
+      </td> 
+    </tr>
+  </mat-card>
+  <mat-divider></mat-divider>
+
+  <mat-card>
+    <tr class="row">
+      <td class="col-xs-6">
+        Product Short Description
+      </td>
+      <td></td>
+      <td class="col-xs-6">
+      <b>{{ product.shortDescription }}</b>
+      </td> 
+    </tr>
+  </mat-card>
+  <mat-divider></mat-divider>
+  <mat-card>
+    <tr class="row">
+      <td class="col-xs-6">
+        Product Detailed Description
+      </td>
+      <td></td>
+      <td class="col-xs-6">
+      <b> {{ product.detaildDescription }}</b>
+      </td> 
+    </tr>
+  </mat-card>
+  <mat-divider></mat-divider>
+  <mat-card>
+    <tr class="row">
+      <td class="col-xs-6">
+        Category
+      </td>
+      <td></td>
+      <td class="col-xs-6">
+      <b>{{ product.category }}</b>
+      </td> 
+    </tr>
+  </mat-card>
+  <mat-divider></mat-divider>
+  <mat-card>
+    <tr class="row">
+      <td class="col-xs-6">
+        Starting Price
+      </td>
+      <td></td>
+      <td class="col-xs-6">
+      <b>{{ product.startingPrice }}</b>
+      </td> 
+    </tr>
+  </mat-card>
+  <mat-divider></mat-divider>
+  <mat-card>
+    <tr class="row">
+      <td class="col-xs-6">
+        Bid Ending Date
+      </td>
+      <td></td>
+      <td class="col-xs-6">
+      <b>{{ product.bidEndingDate | date}} </b>
+      </td> 
+    </tr>
+  </mat-card>
+
+<br>
+<div class="header">
+  Bid Details
+</div>
+
+
+<table mat-table [dataSource]="buyers">
+    <ng-container matColumnDef="bidAmount">
+      <th mat-header-cell *matHeaderCellDef> Bid Amount </th>
+      <td mat-cell *matCellDef="let buyer"> {{buyer.bidAmount}} </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let buyer"> {{buyer.firstName}} {{buyer.lastname}} </td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let buyer"> {{buyer.email}} </td>
+      </ng-container>
+      <ng-container matColumnDef="mobile">
+        <th mat-header-cell *matHeaderCellDef> Mobile </th>
+        <td mat-cell *matCellDef="let buyer"> {{buyer.phone}} </td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+  </table>
+  
+</ng-container>

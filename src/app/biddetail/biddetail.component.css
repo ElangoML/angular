@@ -1,0 +1,30 @@
+table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 800px;
+    opacity: 0.95;
+  }
+  
+  td {
+    width: 50%;
+  }
+  
+  td:nth-child(2) {
+    width: 200px;
+    font-weight: 500;
+  }
+  tr.row
+  {
+    width: 100%;
+  }
+  div.header
+  {
+    background-color:blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 25px;
+    height: 50px;
+  }
+  
